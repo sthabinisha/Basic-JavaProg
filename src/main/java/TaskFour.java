@@ -3,22 +3,42 @@ import java.util.*;
 public class TaskFour {
     public static void main(String[] args) {
         int[] arr = {23,25,23,87,47,1,91,51,2};
-        //removeDuplicate(arr);
-        //findSecondLargeVal(arr);
-       // findSecondSmallersVal(arr);
-        //addTwoMatrices();
-       // FiveMoveZero();
-        //SixRemoveDuplicates();
+        removeDuplicate(arr);
+        findSecondLargeVal(arr);
+        findSecondSmallersVal(arr);
+        addTwoMatrices();
+        FiveMoveZero();
+        SixRemoveDuplicates();
 
-        //SevendiffBetLargeSmall(arr);
-        //removeDuplicatereturnLen(arr);
-        //nineSumeTwo(arr, 92);
-        //TenClosestZero();
+        SevendiffBetLargeSmall(arr);
+        removeDuplicatereturnLen(arr);
+        nineSumeTwo(arr, 92);
+        TenClosestZero();
         ElevenAlternateVal(arr);
 
     }
 
     private static void ElevenAlternateVal(int[] arr) {
+
+        int [] res= new int[arr.length];
+        Arrays.sort(arr);
+        //res[0] = arr[arr.length -1];
+        int left = 0; int right = arr.length-1;
+        for (int i = 0; i < arr.length; i++) {
+
+            if(i%2 == 0){
+                res[i] = arr[right--];
+
+
+            }else{
+                res[i] = arr[left++];
+
+            }
+
+
+
+        }
+        System.out.println(Arrays.toString(res));
 
     }
 
