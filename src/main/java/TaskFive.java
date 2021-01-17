@@ -2,7 +2,7 @@
 import java.nio.charset.Charset;
 import java.util.*;
 
-public class ArrayString {
+public class TaskFive {
 
     public static void main(String[] args) {
         String testKey = "Be Happy and Stay Motivated";
