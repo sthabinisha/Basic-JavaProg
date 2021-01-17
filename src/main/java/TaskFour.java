@@ -12,9 +12,49 @@ public class TaskFour {
 
         //SevendiffBetLargeSmall(arr);
         //removeDuplicatereturnLen(arr);
-        nineSumeTwo(arr, 92);
+        //nineSumeTwo(arr, 92);
+        //TenClosestZero();
+        ElevenAlternateVal(arr);
 
     }
+
+    private static void ElevenAlternateVal(int[] arr) {
+
+    }
+
+    private static void TenClosestZero() {
+        int[] arr = {1, 5, -4, 7, 8, -6};
+        int min = Integer.MAX_VALUE;
+
+
+
+        for (int i = 1; i < arr.length; i++) {
+            if(Math.abs(arr[i-1] )< Math.abs(arr[i])){
+                int temp = arr[i-1];
+                arr[i-1] = arr[i];
+                arr[i] = temp;
+
+            }
+            }
+        int x = 0, y = 0 ;
+        for (int i = 1; i < arr.length; i++) {
+            if(Math.abs(arr[i-1] + arr[i]) < min){
+                min = arr[i-1] + arr[i];
+
+                 x = arr[i-1];
+                 y = arr[i];
+
+
+            }
+
+        }
+
+        System.out.println("Two elements whose sum is minimum are "+ x + " and "+ y);
+
+
+
+
+        }
 
     private static void nineSumeTwo(int[] arr, int i) {
 
