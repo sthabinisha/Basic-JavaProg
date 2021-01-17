@@ -1,42 +1,29 @@
 public class TaskSixThree {
+
     public static void main(String[] args) {
-        Rectangle rectangle = new Rectangle();
-        System.out.println("Rectangele area: "+ rectangle.getArea(new Rectangle(8,9)));
-        System.out.println("Rectangele area: "+ rectangle.getArea(new Rectangle(8)));
-        System.out.println("Rectangele area: "+ rectangle.getArea(rectangle));
+        Student student = new Student();
+        System.out.println(student.toString());
+        System.out.println(new Student("Marky"));
 
     }
 }
 
-class Rectangle{
+class Student{
 
-    private  float length;
-    private float breadth;
+    private String out;
 
-    public Rectangle() {
-        this.length = 0;
-        breadth = 0;
+    public Student(String out) {
+        this.out = out;
     }
 
-    public Rectangle(float length, float breadth) {
-        this.length = length;
-        this.breadth = breadth;
-    }
-
-    public Rectangle(float length) {
-        this.length = length;
-        this.breadth = length;
-    }
-
-    public float getArea(Rectangle rectangle) {
-        return  rectangle.length * rectangle.breadth;
+    public Student() {
+        this.out = "UnKnown";
     }
 
     @Override
     public String toString() {
-        return "Rectangle{" +
-                "length=" + length +
-                ", breadth=" + breadth +
+        return "Student{" +
+                "out='" + out + '\'' +
                 '}';
     }
 }
