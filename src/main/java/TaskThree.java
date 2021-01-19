@@ -21,10 +21,40 @@ public class TaskThree {
 //        ChecktheinputaescDesc();
 //        FindDaysinMonth();
         //8 is already applied on 7
-        rightAnglePrint();
+        //rightAnglePrint();
+        check2Decimal();
+       // PascalsTriangle();
 
 
 
+
+
+    }
+
+    private static void check2Decimal() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Input Two decimal values : ");
+        double one = input.nextDouble();
+        double two = input.nextDouble();
+        if(String.format("%.2f", one).equals( String.format("%.2f", two) )){
+            System.out.println(" decimal match");
+        }else{
+            System.out.println("Invalid");
+        }
+    }
+
+    private static void PascalsTriangle() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Input number of rows : ");
+        int rows = input.nextInt();
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j);
+
+            }
+            System.out.println("");
+
+        }
 
     }
 
