@@ -4,18 +4,38 @@ import java.util.Scanner;
 
 public class TaskThree {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the number you want the multiplication for");
-        int  num = scanner.nextInt();
-        printMultiplecation(num);
-        System.out.println("Enter the  10 numbers ");
-        int[] arr = new int[10];
-        int i = 0;
-        while (scanner.hasNext()&& i<10){
-            arr[i++] = scanner.nextInt();
-        }
-        printSumof10Numbers(arr);
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Enter the number you want the multiplication for");
+//        int  num = scanner.nextInt();
+//        printMultiplecation(num);
+//        System.out.println("Enter the  10 numbers ");
+//        int[] arr = new int[10];
+//        int i = 0;
+//        while (scanner.hasNext()&& i<10){
+//            arr[i++] = scanner.nextInt();
+//        }
+//        printSumof10Numbers(arr);
+        CheckInvalidInput();
 
+
+
+    }
+
+    private static void CheckInvalidInput() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the  10 numbers ");
+        int[] arr = new int[12];
+        int i = 0;
+        while (scanner.hasNext()&& i<12){
+             arr[i] = scanner.nextInt();
+             while(arr[i] <0 ||arr[i]>12){
+                 System.out.println("ERROR Please enter a valid age");
+                 arr[i] = scanner.nextInt();
+
+             }
+             i++;
+
+        }
 
     }
 
