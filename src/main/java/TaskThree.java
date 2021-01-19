@@ -16,8 +16,31 @@ public class TaskThree {
 //        }
 //        printSumof10Numbers(arr);
 //        CheckInvalidInput();
-        PrintSumNaturalNum(20);
-        longInput();
+//        PrintSumNaturalNum(20);
+//        longInput();
+        ChecktheinputaescDesc();
+
+
+
+    }
+
+    private static void ChecktheinputaescDesc() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the  3 numbers ");
+        int[] arr = new int[3];
+        int i = 0;
+        while (scanner.hasNext()&& i<3){
+            arr[i++] = scanner.nextInt();
+        }
+       if(arr[0]< arr[1] && arr[1]< arr[2] ){
+           System.out.println("INCREASING");
+       }else if(arr[0]> arr[1] && arr[1]> arr[2] ){
+           System.out.println("DECREASING");
+
+       }else{
+           System.out.println("Neither increasing or decreasing order");
+       }
+
 
 
 
