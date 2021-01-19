@@ -15,9 +15,26 @@ public class TaskThree {
 //            arr[i++] = scanner.nextInt();
 //        }
 //        printSumof10Numbers(arr);
-        CheckInvalidInput();
+//        CheckInvalidInput();
+        PrintSumNaturalNum(20);
+        longInput();
 
 
+
+    }
+
+    private static void PrintSumNaturalNum(int num) {
+        int sum = 0;
+        while(num>0){
+            sum+= num;
+            num -= 1;
+
+        }
+        System.out.println(" THe total sume is : "+ sum);
+
+    }
+
+    private static void longInput() {
 
     }
 
