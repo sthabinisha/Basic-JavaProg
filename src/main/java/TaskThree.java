@@ -30,11 +30,27 @@ public class TaskThree {
             num -= 1;
 
         }
-        System.out.println(" THe total sume is : "+ sum);
+        System.out.println(" THe total sum is : "+ sum);
 
     }
 
     private static void longInput() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the  long number");
+
+        long val = scanner.nextLong();
+        //Not sure what to calculate; Question is not clear
+        System.out.println(" out Value: "+  val);
+        int sum = 0, rem = 0;
+        while(val>0){
+            rem = (int)val % 10;
+            sum+= rem;
+            val = val/ 10;
+
+        }
+        System.out.println(" THe total sum is : "+ sum);
+
+
 
     }
 
