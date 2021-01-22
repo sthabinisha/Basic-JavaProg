@@ -20,16 +20,34 @@ public class TaskSeven {
         int[] arr2 = {3, 5, 7, 1, 4,6};
         int num = 153;
         String str = "Binisha";
-        reverseString(str);
-        noRepeatedCharacter(str);
-        findIntersection(arr1, arr2);
-        System.out.println(isUnique(str));
-        countNumberWords("I am from London");
-        System.out.println( "the provided "+ num+" is "+armstrongNumber(num) +" for armstrong");
-        countCharOccurance(str);
-        strPermutation(str, "");
-        findMaxValue(arr1);
+//        reverseString(str);
+//        noRepeatedCharacter(str);
+//        findIntersection(arr1, arr2);
+//        System.out.println(isUnique(str));
+//        countNumberWords("I am from London");
+//        System.out.println( "the provided "+ num+" is "+armstrongNumber(num) +" for armstrong");
+//        countCharOccurance(str);
+//        strPermutation(str, "");
+//        findMaxValue(arr1);
+        strCombination(str, "");
     }
+
+    private static void strCombination(String str, String ans) {
+        StringBuilder sb = new StringBuilder();
+
+
+           System.out.println(ans);
+
+        for(int i = 0; i< str.length(); i++){
+               strCombination(str.substring(i+1), ans+ str.charAt(i));
+
+            }
+
+
+        }
+
+
+
 
     private static void findMaxValue(int[] arr1) {
         int max = Integer.MIN_VALUE;
