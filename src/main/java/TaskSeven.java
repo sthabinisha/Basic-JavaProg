@@ -1,4 +1,3 @@
-import javax.security.auth.callback.CallbackHandler;
 import java.util.*;
 
 public class TaskSeven {
@@ -30,6 +29,53 @@ public class TaskSeven {
 //        strPermutation(str, "");
 //        findMaxValue(arr1);
         strCombination(str, "");
+        sortHashMap(str);
+    }
+
+    private static void sortHashMap(String str) {
+
+        Map<Character, Integer> set = new LinkedHashMap<>();
+        char[] c = str.toCharArray();
+        for(int i = 0; i<c.length; i++){
+            char a = Character.toLowerCase(c[i]);
+            if(set.containsKey(a)){
+                set.put(a,set.get(a)+1);
+            }else{
+                set.put(a, 1);
+            }
+        }
+
+      Map<Character, Integer> treeset = new TreeMap<>(set);
+        System.out.println("Sort by Keys: ");
+        for (Map.Entry p:treeset.entrySet() ) {
+            System.out.println("Key = " + p.getKey() +
+                    ", Value = " + p.getValue());
+
+        }
+
+        Map<Character, Integer> hm1 = sortByValues(set);
+        System.out.println("Sort by Values: ");
+        for (Map.Entry<Character, Integer> en : hm1.entrySet()) {
+            System.out.println("Key = " + en.getKey() +
+                    ", Value = " + en.getValue());
+        }
+
+    }
+
+    private static Map<Character, Integer> sortByValues(Map<Character, Integer> set) {
+        List<Map.Entry<Character, Integer>> list = new LinkedList<>(set.entrySet());
+        Collections.sort(list, new Comparator<Map.Entry<Character, Integer>>() {
+            @Override
+            public int compare(Map.Entry<Character, Integer> o1, Map.Entry<Character, Integer> o2) {
+                return (o1.getValue().compareTo(o2.getValue()));
+            }
+        });
+        HashMap<Character, Integer> map = new LinkedHashMap<>();
+        for(Map.Entry<Character, Integer> e: list){
+            map.put(e.getKey(), e.getValue());
+
+        }
+        return map;
     }
 
     private static void strCombination(String str, String ans) {
@@ -88,11 +134,7 @@ public class TaskSeven {
         }
         for (Map.Entry p: set.entrySet()) {
             System.out.print(p.getKey()+""+p.getValue());
-
-
-
-
-        }
+       }
     }
 
     private static boolean  armstrongNumber(int num) {
