@@ -19,17 +19,34 @@ public class TaskSeven {
         int[] arr2 = {3, 5, 7, 1, 4,6};
         int num = 153;
         String str = "Binisha";
-//        reverseString(str);
-//        noRepeatedCharacter(str);
-//        findIntersection(arr1, arr2);
-//        System.out.println(isUnique(str));
-//        countNumberWords("I am from London");
-//        System.out.println( "the provided "+ num+" is "+armstrongNumber(num) +" for armstrong");
-//        countCharOccurance(str);
-//        strPermutation(str, "");
-//        findMaxValue(arr1);
+        reverseString(str);
+        noRepeatedCharacter(str);
+        findIntersection(arr1, arr2);
+        System.out.println(isUnique(str));
+        countNumberWords("I am from London");
+        System.out.println( "the provided "+ num+" is "+armstrongNumber(num) +" for armstrong");
+        countCharOccurance(str);
+        strPermutation(str, "");
+        findMaxValue(arr1);
         strCombination(str, "");
         sortHashMap(str);
+        sumOFGIvenArray(new int[] {1, 2, 3}, 3);
+    }
+
+    private static void sumOFGIvenArray(int[] arr1, int k) {
+        int sum = 0, result = 0;
+        Map<Integer, Integer> preSum = new HashMap<>();
+        preSum.put(0, 1);
+
+        for (int i = 0; i < arr1.length; i++) {
+            sum += arr1[i];
+            if (preSum.containsKey(sum - k)) {
+                result += preSum.get(sum - k);
+            }
+            preSum.put(sum, preSum.getOrDefault(sum, 0) + 1);
+        }
+
+        System.out.println("Total number of sub array "+ result);;
     }
 
     private static void sortHashMap(String str) {
